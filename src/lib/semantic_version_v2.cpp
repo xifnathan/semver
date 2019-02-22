@@ -171,8 +171,8 @@ Version::Version(const string& s)
   if (!getline(ss, part)) return;
   m_patchVersion = static_cast<unsigned int>(strtoul(part.c_str(), 0, 0));
 
-  int preLoc = part.find_first_of("-");
-  int buildLoc = part.find_first_of("+");
+  size_t preLoc = part.find_first_of("-");
+  size_t buildLoc = part.find_first_of("+");
 
   if (preLoc != string::npos) {
     m_prereleaseVersion = part.substr(preLoc, buildLoc);
