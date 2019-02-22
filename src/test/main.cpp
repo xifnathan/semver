@@ -265,10 +265,10 @@ DEF_TEST(ConstructFromStringOnlyMeta, SemanticVersion)
 
 DEF_TEST(ConstructFromStringNoPrereleaseNoMeta, SemanticVersion)
 {
-  Version v("1.2.3+build.1234");
+  Version v("1.2.3");
   ostringstream s;
   s << v;
-  return s.str() == "1.2.3+build.1234";
+  return s.str() == "1.2.3";
 }
 
 DEF_TEST(WellFormed, SemanticVersion)
