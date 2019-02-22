@@ -175,7 +175,7 @@ Version::Version(const string& s)
   const size_t buildLoc = part.find_first_of("+");
 
   if (preLoc != string::npos) {
-    const ize_t length = (buildLoc != string::npos ) ? (buildLoc -1) - preLoc : string::npos;
+    const size_t length = (buildLoc != string::npos ) ? (buildLoc -1) - preLoc : string::npos;
     m_prereleaseVersion = part.substr(preLoc+1, length);
   }
 
