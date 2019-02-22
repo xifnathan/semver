@@ -175,11 +175,11 @@ Version::Version(const string& s)
   size_t buildLoc = part.find_first_of("+");
 
   if (preLoc != string::npos) {
-    m_prereleaseVersion = part.substr(preLoc, buildLoc);
+    m_prereleaseVersion = part.substr(preLoc + 1, buildLoc);
   }
 
   if (buildLoc != string::npos) {
-    m_buildVersion = part.substr(buildLoc, string::npos);
+    m_buildVersion = part.substr(buildLoc + 1, string::npos);
   }
 }
 
