@@ -309,7 +309,7 @@ DEF_TEST(ParseIllFormed, SemanticVersion)
   return !v.IsWellFormed();
 }
 
-DEF_TEST(ParseIllFormed, SemanticVersion)
+DEF_TEST(ParseIllFormedSwapped, SemanticVersion)
 {
   Version v("1.2.3+build+1234-alpha-2");
   return !v.IsWellFormed();
