@@ -255,6 +255,14 @@ DEF_TEST(ConstructFromString, SemanticVersion)
   return s.str() == "1.2.3-alpha.2+build.1234";
 }
 
+DEF_TEST(ConstructFromStringOnlyPrerelease, SemanticVersion)
+{
+  Version v("1.2.3-alpha.2");
+  ostringstream s;
+  s << v;
+  return s.str() == "1.2.3-alpha.2";
+}
+
 DEF_TEST(ConstructFromStringOnlyMeta, SemanticVersion)
 {
   Version v("1.2.3+build.1234");
@@ -274,6 +282,12 @@ DEF_TEST(ConstructFromStringNoPrereleaseNoMeta, SemanticVersion)
 DEF_TEST(WellFormed, SemanticVersion)
 {
   Version v("1.2.3-alpha.2+build.1234");
+  return v.IsWellFormed();
+}
+
+DEF_TEST(WellFormedOnlyPrerelease, SemanticVersion)
+{
+  Version v("1.2.3-alpha.2");
   return v.IsWellFormed();
 }
 
